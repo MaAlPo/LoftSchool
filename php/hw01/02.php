@@ -1,7 +1,7 @@
 <?php
 
-$numbers = array(1,2,3,4,5,6,7,8,9,10);
-$my_act = "-";
+$numbers = array(1,2,3,4,5);
+$my_act = "*";
 
 //в зависимости от значения второго параметра проходим по массиву с выполнением данного арифметического действия 
 function opachki($numbers, $my_act){
@@ -61,5 +61,4 @@ function opachki($numbers, $my_act){
 			echo "Ошибочка вышла!";
 	}
 };
-
 opachki($numbers, $my_act);

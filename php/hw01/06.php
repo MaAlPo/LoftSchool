@@ -1,14 +1,11 @@
 <?php
 $i = 10;
-$j = 19;
+$j = 35;
 
-function opachki($i, $j){
-    if($i > $j)
-        return;
-    if($i%2){
-        echo $i.", ";
-    }
+function recur($i, $j){
+    if($i > $j) return;
+    if($i%2) echo $i.", ";
     $i++;
-    opachki($i, $j);
+    recur($i, $j);
 };
-opachki($i, $j);
+recur($i, $j);
