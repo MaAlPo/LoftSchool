@@ -12,19 +12,16 @@ st_func($my_arr);
 
 //Не закончено!
 function my_func($my_arr){
-    $new_array = array();
-    $arr_len = count($my_arr);
+    $new_array = $my_arr;
+    $arr_len = count($new_array);
     for($i = 0; $i < $arr_len; $i++) {
-        $temp = $my_arr[$i];
-
-        for($j = (i + 1); $j < $arr_len; $j++){
-            if ($temp > $my_arr[$j]) {
-                $temp2 = $my_arr[$j];
-                $my_arr[$j] = $temp;
-                $temp = $temp2;
+        for($j = ($i + 1); $j < $arr_len; $j++){
+            if ($new_array[$i] > $new_array[$j]) {
+                $temp = $new_array[$j];
+                $new_array[$j] = $new_array[$i];
+                $new_array[$i] = $temp;
             }
         }
-        $new_array[] = $temp;
     }
     foreach ($new_array as $my_val){
         echo $my_val.", ";
