@@ -13,60 +13,37 @@ function opachki(){
     if(count($parameters) < 3){
         echo "Для выполнения функции передано недостаточно параметров. Передайте не менее 3 параметров.";
     }
+    $result = $parameters[1];
 
     switch($parameters[0]){
         case "+":
-            for($i = 1; $i < count($parameters); $i++){
-                for($k = $i + 1; $k < count($parameters); $k++){
-                    echo ($parameters[$i]+$parameters[$k])."<br/>";
-                }
+            for($i = 2; $i < count($parameters); $i++){
+                $result += $parameters[$i];
             }
             break;
         case "-":
-            for($i = 1; $i < count($parameters); $i++){
-                for($k = $i + 1; $k < count($parameters); $k++){
-                    echo ($parameters[$i]-$parameters[$k])."<br/>";
-                }
-            }
-            for($i = (count($parameters)-1); $i >= 0; $i--){
-                for($k = $i - 1; $k > 0; $k--){
-                    echo ($parameters[$i]-$parameters[$k])."<br/>";
-                }
+            for($i = 2; $i < count($parameters); $i++){
+                $result -= $parameters[$i];
             }
             break;
         case "*":
-            for($i = 1; $i < count($parameters); $i++){
-                for($k = $i + 1; $k < count($parameters); $k++){
-                    echo ($parameters[$i]*$parameters[$k])."<br/>";
-                }
+            for($i = 2; $i < count($parameters); $i++){
+                $result *= $parameters[$i];
             }
            break;
         case "/":
-            for($i = 1; $i < count($parameters); $i++){
-                for($k = $i + 1; $k < count($parameters); $k++){
-                    echo ($parameters[$i]/$parameters[$k])."<br/>";
-                }
-            }
-            for($i = (count($parameters)-1); $i >= 0; $i--){
-                for($k = $i - 1; $k > 0; $k--){
-                    echo ($parameters[$i]/$parameters[$k])."<br/>";
-                }
+            for($i = 2; $i < count($parameters); $i++){
+                $result /= $parameters[$i];
             }
            break;
         case "%":
-            for($i = 1; $i < count($parameters); $i++){
-                for($k = $i + 1; $k < count($parameters); $k++){
-                    echo ($parameters[$i]%$parameters[$k])."<br/>";
-                }
-            }
-            for($i = (count($parameters)-1); $i >= 0; $i--){
-                for($k = $i - 1; $k > 0; $k--){
-                    echo ($parameters[$i]%$parameters[$k])."<br/>";
-                }
+            for($i = 2; $i < count($parameters); $i++){
+                $result %= $parameters[$i];
             }
            break;
         default:
            echo "Первым параметром должен быть символ арифметического действия!";
     }
+    echo $result;
 };
-opachki("-", 1,2,3);
+opachki("*", 1,2,3);
