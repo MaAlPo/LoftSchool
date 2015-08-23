@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Maks
- * Date: 23.08.2015
- * Time: 11:25
- */ 
+
+try {
+    $pdo = new PDO("mysql:dbname=loftschool;host=localhost", "root", "");
+}catch(PDOException $ex){
+    echo "Возникла ошибка соединения: ". $ex->getMessage();
+    exit;
+}
