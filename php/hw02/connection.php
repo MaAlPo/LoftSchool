@@ -1,8 +1,10 @@
 <?php
 
-try {
-    $pdo = new PDO("mysql:dbname=loftschool;host=localhost", "root", "");
-}catch(PDOException $ex){
-    echo "Возникла ошибка соединения: ". $ex->getMessage();
-    exit;
+$mysql = new mysqli('localhost', 'root', '', 'loftschool');
+
+if(mysqli_connect_errno()){
+    die(mysqli_connect_error());
 }
+
+$sql = "SET NAMES 'UTF-8'";
+$mysql->query($sql);

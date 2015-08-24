@@ -1,10 +1,11 @@
 <?php
 require_once("connection.php");
 
-$sql = "SELECT Name, Lastname FROM Пользователи";
-$rs = $pdo->query($sql);
+$sql_products = "SELECT * FROM Товары";
+$result = $mysql->query($sql_products);
 
-$rows = $rs->fetchAll(PDO::FETCH_OBJ);
-foreach($rows as $row){
-    echo "{$row->Name} {$row->Lastname}<br/>";
+$products = $result->fetch_all(MYSQL_ASSOC);
+
+foreach($products as $product){
+    echo "{$product['Title']}<br/>";
 }
