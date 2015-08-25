@@ -3,14 +3,14 @@ Navicat MySQL Data Transfer
 
 Source Server         : MyDataBases
 Source Server Version : 50541
-Source Host           : localhost:3306
+Source Host           : 127.0.0.1:3306
 Source Database       : loftschool
 
 Target Server Type    : MYSQL
 Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-08-24 10:11:09
+Date: 2015-08-25 11:30:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,9 +20,12 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `Безопасность`;
 CREATE TABLE `Безопасность` (
-  `Id_user` int(11) NOT NULL,
-  `Login` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL
+  `Id_user` int(10) unsigned NOT NULL,
+  `Login` varchar(32) NOT NULL,
+  `Password` varchar(32) NOT NULL,
+  PRIMARY KEY (`Id_user`),
+  UNIQUE KEY `Id_user` (`Id_user`),
+  CONSTRAINT `безопасность_ibfk_1` FOREIGN KEY (`Id_user`) REFERENCES `Пользователи` (`Id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -64,11 +67,14 @@ INSERT INTO `Безопасность` VALUES ('30', 'rota', '46ryu');
 -- ----------------------------
 DROP TABLE IF EXISTS `Заказы`;
 CREATE TABLE `Заказы` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `Id_user` int(11) NOT NULL,
-  `Status` varchar(32) NOT NULL,
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Id_user` int(10) unsigned NOT NULL,
+  `Status` set('Отменён','Завершён','В обработке') NOT NULL DEFAULT '',
   `Date_order` date NOT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`),
+  KEY `Id_user` (`Id_user`),
+  CONSTRAINT `заказы_ibfk_1` FOREIGN KEY (`Id_user`) REFERENCES `Пользователи` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -98,9 +104,9 @@ INSERT INTO `Заказы` VALUES ('21', '9', 'Завершён', '2015-08-16');
 INSERT INTO `Заказы` VALUES ('22', '29', 'Завершён', '2015-08-17');
 INSERT INTO `Заказы` VALUES ('23', '22', 'Завершён', '2015-08-18');
 INSERT INTO `Заказы` VALUES ('24', '19', 'Завершён', '2015-08-19');
-INSERT INTO `Заказы` VALUES ('25', '21', 'Доставляется', '2015-08-20');
-INSERT INTO `Заказы` VALUES ('26', '23', 'Доставляется', '2015-08-22');
-INSERT INTO `Заказы` VALUES ('27', '26', 'Доставляется', '2015-08-22');
+INSERT INTO `Заказы` VALUES ('25', '21', '', '2015-08-20');
+INSERT INTO `Заказы` VALUES ('26', '23', '', '2015-08-22');
+INSERT INTO `Заказы` VALUES ('27', '26', '', '2015-08-22');
 INSERT INTO `Заказы` VALUES ('28', '27', 'В обработке', '2015-08-23');
 INSERT INTO `Заказы` VALUES ('29', '24', 'В обработке', '2015-08-23');
 INSERT INTO `Заказы` VALUES ('30', '25', 'В обработке', '2015-08-24');
@@ -112,9 +118,10 @@ INSERT INTO `Заказы` VALUES ('32', '14', 'В обработке', '2015-08
 -- ----------------------------
 DROP TABLE IF EXISTS `Категории товаров`;
 CREATE TABLE `Категории товаров` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int(4) unsigned NOT NULL AUTO_INCREMENT,
   `Title` varchar(128) NOT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -136,15 +143,17 @@ INSERT INTO `Категории товаров` VALUES ('10', 'Корпуса');
 -- ----------------------------
 DROP TABLE IF EXISTS `Пользователи`;
 CREATE TABLE `Пользователи` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Name` varchar(32) DEFAULT NULL,
   `Lastname` varchar(32) NOT NULL,
-  `Birthday` date NOT NULL,
+  `Birthday` date DEFAULT NULL,
   `Email` varchar(128) NOT NULL,
   `Is_active` bit(1) NOT NULL DEFAULT b'0',
   `Reg_date` date NOT NULL,
   `Last_update` date NOT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`) USING BTREE,
+  UNIQUE KEY `Email` (`Email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -186,10 +195,14 @@ INSERT INTO `Пользователи` VALUES ('30', 'Анна', 'Опорова
 -- ----------------------------
 DROP TABLE IF EXISTS `Состав заказа`;
 CREATE TABLE `Состав заказа` (
-  `Id_order` int(11) NOT NULL,
-  `Id_product` int(11) NOT NULL,
-  `Count` int(10) NOT NULL,
-  `Price` varchar(255) NOT NULL
+  `Id_order` int(10) unsigned NOT NULL,
+  `Id_product` int(10) unsigned NOT NULL,
+  `Count` int(10) unsigned NOT NULL,
+  `Price` decimal(10,0) unsigned NOT NULL,
+  KEY `Id_order` (`Id_order`) USING BTREE,
+  KEY `Id_product` (`Id_product`),
+  CONSTRAINT `состав заказа_ibfk_2` FOREIGN KEY (`Id_product`) REFERENCES `Товары` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `состав заказа_ibfk_1` FOREIGN KEY (`Id_order`) REFERENCES `Заказы` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -250,64 +263,67 @@ INSERT INTO `Состав заказа` VALUES ('32', '5', '1', '2500');
 -- ----------------------------
 DROP TABLE IF EXISTS `Товары`;
 CREATE TABLE `Товары` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Title` varchar(128) NOT NULL,
-  `Mark` varchar(32) NOT NULL,
-  `Count` int(11) NOT NULL DEFAULT '0',
-  `Price` decimal(10,2) NOT NULL,
+  `Mark` varchar(128) DEFAULT NULL,
+  `Count` int(10) unsigned NOT NULL DEFAULT '0',
+  `Price` decimal(10,0) unsigned NOT NULL,
   `Description` text,
-  `Id_catalog` int(11) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+  `Id_catalog` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`),
+  KEY `Id_catalog` (`Id_catalog`),
+  CONSTRAINT `товары_ibfk_1` FOREIGN KEY (`Id_catalog`) REFERENCES `Категории товаров` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Товары
 -- ----------------------------
-INSERT INTO `Товары` VALUES ('1', 'AMD', 'Sempron 2650', '2', '1750.00', 'сокет SocketAM1, ядро Jaguar Kabini, ядер — 2, потоков — 2, техпроцесс 28нм, частота 1.45 ГГц, поддержка памяти DDR3 до 16 ГБ, ЕСС, каналов памяти — 2, контроллер PCI Express 2.0, графическое ядро AMD Radeon HD 8240, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('2', 'AMD', 'A4 5300', '5', '1830.00', 'сокет SocketFM2, ядер — 2, техпроцесс 32нм, частота 3.4 ГГц, графическое ядро AMD Radeon HD 7480D, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('3', 'AMD', 'Athlon X2 340', '1', '1830.00', 'сокет SocketFM2, ядер — 2, техпроцесс 32нм, частота 3.2 ГГц, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('4', 'INTEL', 'Celeron Dual-Core G1630', '4', '2440.00', 'сокет LGA 1155, ядро Ivy Bridge, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.8 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 28, контроллер PCI Express 2.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('5', 'INTEL', 'Celeron G1620', '2', '2500.00', 'сокет LGA 1155, ядро Ivy Bridge, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.7 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 27, контроллер PCI Express 2.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('6', 'INTEL', 'Celeron Dual-Core G1820', '12', '2900.00', 'сокет LGA 1150, ядро Haswell, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.7 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 27, контроллер PCI Express 3.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
-INSERT INTO `Товары` VALUES ('7', 'ASUS', 'AM1M-A', '2', '2330.00', 'память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: SocketAM1; тип поставки: Ret', '2');
-INSERT INTO `Товары` VALUES ('8', 'ASUS', 'A58M-K', '5', '2870.00', 'чипсет AMD A58 FCH; память DDR3 — 2слота; частотой до 2133МГц; гнездо процессора: Socket FM2+; тип поставки: Ret; SATA RAID', '2');
-INSERT INTO `Товары` VALUES ('9', 'ASUS', 'H81M-K', '4', '2910.00', 'чипсет Intel H81; память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: LGA 1150; тип поставки: Ret', '2');
-INSERT INTO `Товары` VALUES ('10', 'ASROCK ', '960GM-VGS3 FX', '6', '2870.00', 'интегрированное видео; чипсет AMD 760G & AMD SB710; память DDR3 — 2слота; частотой до 1333МГц; гнездо процессора: SocketAM3+; тип поставки: Ret; SATA RAID', '2');
-INSERT INTO `Товары` VALUES ('11', 'GIGABYTE', 'GA-H61M-S1', '5', '2900.00', 'чипсет Intel H61(B3); память DDR3 — 2слота; частотой до 1333МГц; гнездо процессора: LGA 1155; тип поставки: Ret', '2');
-INSERT INTO `Товары` VALUES ('12', 'MSI', 'H81M-P33', '8', '2900.00', 'чипсет Intel H81; память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: LGA 1150; тип поставки: Ret', '2');
-INSERT INTO `Товары` VALUES ('13', 'HYNIX', '3rd DDR2', '2', '970.00', '240-pin; частота: 800; форм-фактор: DIMM; тип поставки: OEM', '3');
-INSERT INTO `Товары` VALUES ('14', 'PATRIOT', 'DDR3', '1', '980.00', '240-pin; частота: 1600; форм-фактор: DIMM; тип поставки: Ret', '3');
-INSERT INTO `Товары` VALUES ('15', 'AMD', 'R532G1601S1S-UO DDR3', '8', '1000.00', '204-pin; частота: 1600; форм-фактор: SO-DIMM; тип поставки: Ret', '3');
-INSERT INTO `Товары` VALUES ('16', 'MSI', 'GeForce 210', '6', '1920.00', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 500МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; тип поставки: Ret', '4');
-INSERT INTO `Товары` VALUES ('17', 'SAPPHIRE', 'Radeon HD 5450', '3', '2250.00', 'AMD Radeon HD 5450; частота процессора: 650 МГц; частота памяти: 1000МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 11/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 400Вт; тип поставки: oem', '4');
-INSERT INTO `Товары` VALUES ('18', 'ASUS', 'GeForce 210, 210-SL-TC1GD3-L', '5', '1950.00', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 1200МГц; объём видеопамяти: 512Мб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; тип поставки: Ret', '4');
-INSERT INTO `Товары` VALUES ('19', 'ASUS', 'EN210 SILENT/DI/1GD3/V2(LP)', '5', '2190.00', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 1200МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 300Вт; тип поставки: Ret', '4');
-INSERT INTO `Товары` VALUES ('20', 'GIGABYTE', 'GeForce 210, GV-N210D3-1GI', '6', '2130.00', 'nVidia GeForce 210; частота процессора: 590 МГц; частота памяти: 1200МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 300Вт; тип поставки: Ret', '4');
-INSERT INTO `Товары` VALUES ('21', 'SEAGATE', 'Momentus Thin ST500LT012', '6', '2950.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA II; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 16Мб', '5');
-INSERT INTO `Товары` VALUES ('22', 'SEAGATE', 'Momentus ST320LM001', '3', '2670.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA II; объём: 320Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
-INSERT INTO `Товары` VALUES ('23', 'WD', 'Scorpio Blue WD5000LPVX', '0', '2970.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
-INSERT INTO `Товары` VALUES ('24', 'TOSHIBA ', 'MQ01ABF050', '6', '2930.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
-INSERT INTO `Товары` VALUES ('25', 'HGST', 'Travelstar Z5K500', '2', '3020.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
-INSERT INTO `Товары` VALUES ('26', 'WD', 'Blue WD3200LPVX', '9', '3060.00', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 320Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
-INSERT INTO `Товары` VALUES ('27', 'TOSHIBA', 'DT01ACA050', '3', '3220.00', 'форм-фактор 3.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 7200об/мин; буферная память 32Мб', '5');
-INSERT INTO `Товары` VALUES ('28', 'LINKWORLD', 'LW2-300W', '9', '860.00', 'ATX; размер вентилятора 80мм; мощность: 300Вт; питание MB и CPU: 24+4 pin; питание видеокарты: отсутствует; разъемы Molex: 2шт; разъемы SATA: 2шт; cетевой кабель в комплекте; цвет: стандарт; тип поставки Ret', '6');
-INSERT INTO `Товары` VALUES ('29', 'ACCORD', 'ACC-350W-12', '5', '840.00', 'ATX; размер вентилятора 120мм; мощность: 350Вт; питание MB и CPU: 24+4 pin; питание видеокарты: 6 pin; разъемы Molex: 1шт; разъемы SATA: 4шт; без сетевого кабеля; цвет: стандарт; тип поставки OEM', '6');
-INSERT INTO `Товары` VALUES ('30', ' GIGABYTE', 'GZ-EBS45N-C3', '6', '1880.00', 'ATX; размер вентилятора 120мм; мощность: 450Вт; питание MB и CPU: 24+4+4 pin; разъемы Molex: 2шт; разъемы SATA: 3шт; без сетевого кабеля; цвет: черный; тип поставки OEM', '6');
-INSERT INTO `Товары` VALUES ('31', ' DEEPCOOL', 'XFAN 60', '6', '110.00', 'вентиляторов — 1шт, 60мм, 3000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
-INSERT INTO `Товары` VALUES ('32', ' DEEPCOOL', 'XFAN 40', '5', '180.00', 'вентиляторов — 1шт, 40мм, 4500 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
-INSERT INTO `Товары` VALUES ('33', 'TITAN', 'DCF-8025L12S', '3', '180.00', 'вентиляторов — 1шт, 80мм, 2000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
-INSERT INTO `Товары` VALUES ('34', 'GLACIALTECH ', 'IceWind GS14025', '2', '230.00', 'вентиляторов — 1шт, 140мм, 1000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
-INSERT INTO `Товары` VALUES ('35', 'GLACIALTECH ', 'IceWind 9225', '6', '260.00', 'вентиляторов — 1шт, 92мм, 1500 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
-INSERT INTO `Товары` VALUES ('36', 'ASUS', 'Xonar DG', '3', '2170.00', 'звуковая схема: 5.1, тип поставки: Ret', '8');
-INSERT INTO `Товары` VALUES ('37', 'CREATIVE ', 'Sound Blaster Play! 2', '1', '2590.00', 'звуковая схема: 2.0, тип поставки: Ret', '8');
-INSERT INTO `Товары` VALUES ('38', 'CREATIVE', 'Audigy FX ', '2', '3220.00', 'звуковая схема: 5.1, тип поставки: Ret', '8');
-INSERT INTO `Товары` VALUES ('39', 'ASUS', 'Xonar D-KARA', '4', '3470.00', 'звуковая схема: 5.1, тип поставки: Ret', '8');
-INSERT INTO `Товары` VALUES ('40', 'CREATIVE', 'Sound Blaster Z', '3', '7320.00', 'звуковая схема: 5.1, тип поставки: Ret', '8');
-INSERT INTO `Товары` VALUES ('41', 'SATA', '(2ext/2int)+UDMA 133 1-port', '9', '2530.00', '(2ext/2int)+UDMA 133 1-port PCI STLab A-230 (VIA 6421)RaiD RTL', '9');
-INSERT INTO `Товары` VALUES ('42', 'SATA', '(2+1)port +RAID SIL3512 bulk', '3', '1030.00', '', '9');
-INSERT INTO `Товары` VALUES ('43', 'PCI-E USB', 'USB 2.0 (4+1)port VIA6212 bulk', '6', '540.00', '', '9');
-INSERT INTO `Товары` VALUES ('44', 'PCI-E USB', 'USB 3.0 2-port NEC D720200F1', '5', '960.00', '', '9');
-INSERT INTO `Товары` VALUES ('45', 'PCI-E SATA/IDE', '(2+1)port+SATA RAID JMB363 bulk', '5', '1030.00', '', '9');
-INSERT INTO `Товары` VALUES ('46', 'GIGABYTE', 'GZ-KХ1', '4', '1790.00', 'размер: Midi-Tower; USB 2.0: 2шт, + аудио на передней панели; отсеки внешние 5.25\"- 4шт, 3.5\"- 2шт; внутренние 3.5\"- 5шт; материал стенок — сталь, 0.4мм, видеокарта длиной, до: 265мм', '10');
-INSERT INTO `Товары` VALUES ('47', 'ACCORD', 'SA-01B', '4', '2200.00', 'размер: Midi-Tower; USB 2.0: 2шт, USB 3.0: 1шт, + аудио на передней панели; отсеки внешние 5.25\"- 2шт, 3.5\"- 1шт; внутренние 3.5\"- 4шт; материал стенок — сталь, видеокарта длиной, до: 245мм', '10');
-INSERT INTO `Товары` VALUES ('48', 'ZALMAN', 'ZM-T4', '6', '2220.00', 'размер: Mini-Tower; USB 2.0: 1шт, USB 3.0: 1шт, + аудио на передней панели; отсеки внешние 5.25\"- 1шт, внутренние 3.5\"- 2шт; материал стенок — сталь, видеокарта длиной, до: 300мм', '10');
+INSERT INTO `Товары` VALUES ('1', 'AMD', 'Sempron 2650', '2', '1750', 'сокет SocketAM1, ядро Jaguar Kabini, ядер — 2, потоков — 2, техпроцесс 28нм, частота 1.45 ГГц, поддержка памяти DDR3 до 16 ГБ, ЕСС, каналов памяти — 2, контроллер PCI Express 2.0, графическое ядро AMD Radeon HD 8240, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('2', 'AMD', 'A4 5300', '5', '1830', 'сокет SocketFM2, ядер — 2, техпроцесс 32нм, частота 3.4 ГГц, графическое ядро AMD Radeon HD 7480D, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('3', 'AMD', 'Athlon X2 340', '1', '1830', 'сокет SocketFM2, ядер — 2, техпроцесс 32нм, частота 3.2 ГГц, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('4', 'INTEL', 'Celeron Dual-Core G1630', '4', '2440', 'сокет LGA 1155, ядро Ivy Bridge, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.8 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 28, контроллер PCI Express 2.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('5', 'INTEL', 'Celeron G1620', '2', '2500', 'сокет LGA 1155, ядро Ivy Bridge, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.7 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 27, контроллер PCI Express 2.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('6', 'INTEL', 'Celeron Dual-Core G1820', '12', '2900', 'сокет LGA 1150, ядро Haswell, ядер — 2, потоков — 2, L3 кэш 2Мб, техпроцесс 22нм, частота 2.7 ГГц, поддержка памяти DDR3 до 32 ГБ, ЕСС, каналов памяти — 2, множитель х 27, контроллер PCI Express 3.0, графическое ядро Intel HD Graphics, поставка OEM', '1');
+INSERT INTO `Товары` VALUES ('7', 'ASUS', 'AM1M-A', '2', '2330', 'память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: SocketAM1; тип поставки: Ret', '2');
+INSERT INTO `Товары` VALUES ('8', 'ASUS', 'A58M-K', '5', '2870', 'чипсет AMD A58 FCH; память DDR3 — 2слота; частотой до 2133МГц; гнездо процессора: Socket FM2+; тип поставки: Ret; SATA RAID', '2');
+INSERT INTO `Товары` VALUES ('9', 'ASUS', 'H81M-K', '4', '2910', 'чипсет Intel H81; память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: LGA 1150; тип поставки: Ret', '2');
+INSERT INTO `Товары` VALUES ('10', 'ASROCK ', '960GM-VGS3 FX', '6', '2870', 'интегрированное видео; чипсет AMD 760G & AMD SB710; память DDR3 — 2слота; частотой до 1333МГц; гнездо процессора: SocketAM3+; тип поставки: Ret; SATA RAID', '2');
+INSERT INTO `Товары` VALUES ('11', 'GIGABYTE', 'GA-H61M-S1', '5', '2900', 'чипсет Intel H61(B3); память DDR3 — 2слота; частотой до 1333МГц; гнездо процессора: LGA 1155; тип поставки: Ret', '2');
+INSERT INTO `Товары` VALUES ('12', 'MSI', 'H81M-P33', '8', '2900', 'чипсет Intel H81; память DDR3 — 2слота; частотой до 1600МГц; гнездо процессора: LGA 1150; тип поставки: Ret', '2');
+INSERT INTO `Товары` VALUES ('13', 'HYNIX', '3rd DDR2', '2', '970', '240-pin; частота: 800; форм-фактор: DIMM; тип поставки: OEM', '3');
+INSERT INTO `Товары` VALUES ('14', 'PATRIOT', 'DDR3', '1', '980', '240-pin; частота: 1600; форм-фактор: DIMM; тип поставки: Ret', '3');
+INSERT INTO `Товары` VALUES ('15', 'AMD', 'R532G1601S1S-UO DDR3', '8', '1000', '204-pin; частота: 1600; форм-фактор: SO-DIMM; тип поставки: Ret', '3');
+INSERT INTO `Товары` VALUES ('16', 'MSI', 'GeForce 210', '6', '1920', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 500МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; тип поставки: Ret', '4');
+INSERT INTO `Товары` VALUES ('17', 'SAPPHIRE', 'Radeon HD 5450', '3', '2250', 'AMD Radeon HD 5450; частота процессора: 650 МГц; частота памяти: 1000МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 11/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 400Вт; тип поставки: oem', '4');
+INSERT INTO `Товары` VALUES ('18', 'ASUS', 'GeForce 210, 210-SL-TC1GD3-L', '5', '1950', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 1200МГц; объём видеопамяти: 512Мб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; тип поставки: Ret', '4');
+INSERT INTO `Товары` VALUES ('19', 'ASUS', 'EN210 SILENT/DI/1GD3/V2(LP)', '5', '2190', 'nVidia GeForce 210; частота процессора: 589 МГц; частота памяти: 1200МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 300Вт; тип поставки: Ret', '4');
+INSERT INTO `Товары` VALUES ('20', 'GIGABYTE', 'GeForce 210, GV-N210D3-1GI', '6', '2130', 'nVidia GeForce 210; частота процессора: 590 МГц; частота памяти: 1200МГц; объём видеопамяти: 1Гб; тип видеопамяти: DDR3; DirectX 10.1/OpenGL 3.1; доп. питание: без дополнительного питания; блок питания не менее: 300Вт; тип поставки: Ret', '4');
+INSERT INTO `Товары` VALUES ('21', 'SEAGATE', 'Momentus Thin ST500LT012', '6', '2950', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA II; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 16Мб', '5');
+INSERT INTO `Товары` VALUES ('22', 'SEAGATE', 'Momentus ST320LM001', '3', '2670', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA II; объём: 320Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
+INSERT INTO `Товары` VALUES ('23', 'WD', 'Scorpio Blue WD5000LPVX', '0', '2970', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
+INSERT INTO `Товары` VALUES ('24', 'TOSHIBA ', 'MQ01ABF050', '6', '2930', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
+INSERT INTO `Товары` VALUES ('25', 'HGST', 'Travelstar Z5K500', '2', '3020', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
+INSERT INTO `Товары` VALUES ('26', 'WD', 'Blue WD3200LPVX', '9', '3060', 'форм-фактор 2.5\"; тип: HDD; интерфейс: SATA III; объём: 320Гб; скорость вращения шпинделя 5400об/мин; буферная память 8Мб', '5');
+INSERT INTO `Товары` VALUES ('27', 'TOSHIBA', 'DT01ACA050', '3', '3220', 'форм-фактор 3.5\"; тип: HDD; интерфейс: SATA III; объём: 500Гб; скорость вращения шпинделя 7200об/мин; буферная память 32Мб', '5');
+INSERT INTO `Товары` VALUES ('28', 'LINKWORLD', 'LW2-300W', '9', '860', 'ATX; размер вентилятора 80мм; мощность: 300Вт; питание MB и CPU: 24+4 pin; питание видеокарты: отсутствует; разъемы Molex: 2шт; разъемы SATA: 2шт; cетевой кабель в комплекте; цвет: стандарт; тип поставки Ret', '6');
+INSERT INTO `Товары` VALUES ('29', 'ACCORD', 'ACC-350W-12', '5', '840', 'ATX; размер вентилятора 120мм; мощность: 350Вт; питание MB и CPU: 24+4 pin; питание видеокарты: 6 pin; разъемы Molex: 1шт; разъемы SATA: 4шт; без сетевого кабеля; цвет: стандарт; тип поставки OEM', '6');
+INSERT INTO `Товары` VALUES ('30', ' GIGABYTE', 'GZ-EBS45N-C3', '6', '1880', 'ATX; размер вентилятора 120мм; мощность: 450Вт; питание MB и CPU: 24+4+4 pin; разъемы Molex: 2шт; разъемы SATA: 3шт; без сетевого кабеля; цвет: черный; тип поставки OEM', '6');
+INSERT INTO `Товары` VALUES ('31', ' DEEPCOOL', 'XFAN 60', '6', '110', 'вентиляторов — 1шт, 60мм, 3000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
+INSERT INTO `Товары` VALUES ('32', ' DEEPCOOL', 'XFAN 40', '5', '180', 'вентиляторов — 1шт, 40мм, 4500 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
+INSERT INTO `Товары` VALUES ('33', 'TITAN', 'DCF-8025L12S', '3', '180', 'вентиляторов — 1шт, 80мм, 2000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
+INSERT INTO `Товары` VALUES ('34', 'GLACIALTECH ', 'IceWind GS14025', '2', '230', 'вентиляторов — 1шт, 140мм, 1000 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
+INSERT INTO `Товары` VALUES ('35', 'GLACIALTECH ', 'IceWind 9225', '6', '260', 'вентиляторов — 1шт, 92мм, 1500 об/мин; подшипник скольжения; питание от МП — 3-pin', '7');
+INSERT INTO `Товары` VALUES ('36', 'ASUS', 'Xonar DG', '3', '2170', 'звуковая схема: 5.1, тип поставки: Ret', '8');
+INSERT INTO `Товары` VALUES ('37', 'CREATIVE ', 'Sound Blaster Play! 2', '1', '2590', 'звуковая схема: 2.0, тип поставки: Ret', '8');
+INSERT INTO `Товары` VALUES ('38', 'CREATIVE', 'Audigy FX ', '2', '3220', 'звуковая схема: 5.1, тип поставки: Ret', '8');
+INSERT INTO `Товары` VALUES ('39', 'ASUS', 'Xonar D-KARA', '4', '3470', 'звуковая схема: 5.1, тип поставки: Ret', '8');
+INSERT INTO `Товары` VALUES ('40', 'CREATIVE', 'Sound Blaster Z', '3', '7320', 'звуковая схема: 5.1, тип поставки: Ret', '8');
+INSERT INTO `Товары` VALUES ('41', 'SATA', '(2ext/2int)+UDMA 133 1-port', '9', '2530', '(2ext/2int)+UDMA 133 1-port PCI STLab A-230 (VIA 6421)RaiD RTL', '9');
+INSERT INTO `Товары` VALUES ('42', 'SATA', '(2+1)port +RAID SIL3512 bulk', '3', '1030', '', '9');
+INSERT INTO `Товары` VALUES ('43', 'PCI-E USB', 'USB 2.0 (4+1)port VIA6212 bulk', '6', '540', '', '9');
+INSERT INTO `Товары` VALUES ('44', 'PCI-E USB', 'USB 3.0 2-port NEC D720200F1', '5', '960', '', '9');
+INSERT INTO `Товары` VALUES ('45', 'PCI-E SATA/IDE', '(2+1)port+SATA RAID JMB363 bulk', '5', '1030', '', '9');
+INSERT INTO `Товары` VALUES ('46', 'GIGABYTE', 'GZ-KХ1', '4', '1790', 'размер: Midi-Tower; USB 2.0: 2шт, + аудио на передней панели; отсеки внешние 5.25\"- 4шт, 3.5\"- 2шт; внутренние 3.5\"- 5шт; материал стенок — сталь, 0.4мм, видеокарта длиной, до: 265мм', '10');
+INSERT INTO `Товары` VALUES ('47', 'ACCORD', 'SA-01B', '4', '2200', 'размер: Midi-Tower; USB 2.0: 2шт, USB 3.0: 1шт, + аудио на передней панели; отсеки внешние 5.25\"- 2шт, 3.5\"- 1шт; внутренние 3.5\"- 4шт; материал стенок — сталь, видеокарта длиной, до: 245мм', '10');
+INSERT INTO `Товары` VALUES ('48', 'ZALMAN', 'ZM-T4', '6', '2220', 'размер: Mini-Tower; USB 2.0: 1шт, USB 3.0: 1шт, + аудио на передней панели; отсеки внешние 5.25\"- 1шт, внутренние 3.5\"- 2шт; материал стенок — сталь, видеокарта длиной, до: 300мм', '10');
