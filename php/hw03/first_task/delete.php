@@ -1,7 +1,3 @@
-<?php
-    $name = (string)$_GET["file"];
-?>
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,13 +5,16 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-<div class="wrapper">
-    <h3>Вы действительно хотите удалить файл</h3>
-    <?php
+    <div class="wrapper">
+        <?php
+            $dir = "files/";
+            $name = $_GET["file"];
 
-    echo "<h1>$name</h1>";
-    echo "<button><a href='delete_file.php?file={$name}'>да</button><button><a href='main.php?'>НЕТ</button>";
-?>
-</div>
+            if(!unlink($dir.$name))echo "<h3>Удаление невозможно!</h3>";
+            else echo "<h3>Файл удалён успешно!</h3>";
+
+            echo "<h3><a href='main.php'>Вернуться на главную</a></h3>";
+        ?>
+    </div>
 
 </body>

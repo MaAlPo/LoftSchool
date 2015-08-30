@@ -12,11 +12,10 @@ body{
 }
 .warning{
     color: red;
-    visibility: hidden;
 }
 input{
     height: 30px;
-    width: 250px;
+    width: 300px;
     margin: 10px;
     border-radius: 5px;
     text-align: center;
@@ -46,12 +45,16 @@ button a{
     padding: 10px;
     text-align: left;
 }
-li span{
-    margin: 2em 4em;
+
+span a{
     font-size: smaller;
 }
-li a{
+.list a{
     text-decoration: none;
     color: black;
     text-underline: none;
+    margin: 10px;
+}
+.empty{
+    color: green;
 }

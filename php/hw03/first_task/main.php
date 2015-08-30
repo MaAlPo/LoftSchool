@@ -1,9 +1,14 @@
+<?php
+    $dir = "files/";
+    //получаем массив файлов из папки
+    $files = array_diff(scandir($dir), array(".", ".."));
+?>
 
 <!doctype html>
 <html lang="ru">
-<head lang="ru">
+<head>
     <meta charset="utf-8">
-    <title>Файлы</title>
+    <title>Каталог</title>
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
@@ -11,18 +16,18 @@
     <h3><a href="create.php">Создать новый файл</a></h3>
 
     <?php
-    $files = scandir("files");
-    $files = array_diff($files, array(".", ".."));
-
-    if($files) {
-        echo "У вас есть следующие файлы: <ol>";
-        foreach ($files as $file) {
-            echo "<li><a href='read.php?file={$file}'>$file</a><span ><a href='edit.php?file={$file}'>Редактировать</a>\t<a href='delete.php?file={$file}'>Удалить</a></span>";
+        if($files) {
+            echo "<h3>У вас есть следующие файлы:</h3>";
+            echo "<div class='list''>";
+            foreach ($files as $file) {
+                echo "<a href='read.php?file=$file'>$file</a>
+                      <span><a href='edit.php?file=$file'>Редактировать</a></span>
+                      <span><a href='delete.php?file=$file'>Удалить</a></span><br/>";
+            }
+            echo "</div>";
+        }else{
+            echo "<span>Файлов не обнаружено</span>";
         }
-        echo "</ol>";
-    }else{
-        echo "<span>Файлов не обнаружено</span>";
-    }
     ?>
 </div>
 </body>
