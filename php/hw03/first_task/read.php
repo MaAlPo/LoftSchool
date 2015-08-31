@@ -1,5 +1,6 @@
 <?php
-    $dir = "files/";
+    require_once "main.php";
+    //получаем имя читаемого файла
     $name = $_GET["file"];
 ?>
 
@@ -14,26 +15,8 @@
 
     <?php
         echo "<h1>$name</h1>";
-        $file_open = fopen($dir.$name, 'r');
-        if(!$file_open){
-            echo "<h3>сбой открыти файла</h3>";
-            echo "<h3><a href='main.php'>Вернуться на главную</a></h3>";
-        }
-
-        //проверяем содержимое файла
-        if(!file_get_contents($dir.$name)) {
-            echo "<p class='empty'>Данный файл пуст!</p>";
-        }else {
-        //выводим содержимое файла построчно
-            echo "<p class='text'>";
-            while (!feof($file_open)) {
-                $buffer = fgets($file_open);
-                echo $buffer . "<br/>";
-            }
-            fclose($file_open);
-            echo "</p>";
-        }
-        echo "<h3><a href='main.php'>Вернуться на главную</a></h3>";
+        echo "<p class='text'>".read($name)."</p>";
+        echo "<h3><a href='catalog.php'>Вернуться на главную</a></h3>";
     ?>
 
 </div>

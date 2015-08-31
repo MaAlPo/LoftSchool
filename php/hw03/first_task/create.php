@@ -1,29 +1,20 @@
 <?php
-    $dir = "files/";
+    require_once "main.php";
+
     if($_POST){
-
-        $name = preg_replace ("/[^a-zA-Z0-9\s]/", "", $_POST["file_name"]); // получаем название файла
-
-        $content = $_POST["file_content"]; // получаем содержимое файла
-
+        // получаем название файла
+        $name = preg_replace("/[^a-zA-Z0-9\s]/", "", $_POST["file_name"]);
+        // получаем содержимое файла
+        $content = $_POST["file_content"];
         //проверяем название
         if(!$name) {
-            echo "<h2 class='warning'>Введите название создаваемого файла</h2>";
-            echo "<a href='create.php'>Попробовать ещё раз</a><br/><a href='main.php'>Вернуться на главную</a></h3>";
-            die();
+            die("<h2 class='warning'>Введите название создаваемого файла</h2>
+            <h3><a href='catalog.php'>Вернуться на главную</a></h3>");
+        }else{
+            //создаем и записываем в файл
+            write($name, $content);
+            echo "<h3 class='success'>Файл успешно создан!</h3>";
         }
-
-        $file_name = $name . ".txt";
-        if (!$file_create = fopen($dir.$file_name, "w")){
-            die("<h2 class='warning'>Создать файл не удалось</h2>");
-            echo "<a href='create.php'>Попробовать ещё раз</a><br/><a href='main.php'>Вернуться на главную</a></h3>";
-        }
-        if(!fwrite($file_create, $content)){
-            die("<h2 class='warning'>Не удалось сделать запись в файл</h2>");
-            echo "<a href='create.php'>Попробовать ещё раз</a><br/><a href='main.php'>Вернуться на главную</a></h3>";
-        }
-        fclose($file_create);
-        echo "<h3 style='text-align: center; color: blue'>Файл успешно создан!</h3>";
     }
 ?>
 
@@ -35,7 +26,7 @@
 </head>
 <body>
     <div class="wrapper">
-    <h3><a href="main.php">Вернуться на главную</a></h3>
+    <h3><a href="catalog.php">Вернуться на главную</a></h3>
         <form action="create.php" method="post">
 
             <input type="text" id="file_name" name="file_name" placeholder="Укажите название файла на английском языке"><br/>

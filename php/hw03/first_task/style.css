@@ -10,6 +10,11 @@ body{
     margin: 0 auto;
     text-align: center;
 }
+.success{
+    text-align: center;
+    color: darkblue;
+    font-size: 1.5em;
+}
 .warning{
     color: red;
 }
@@ -57,4 +62,5 @@ span a{
 }
 .empty{
     color: green;
+    text-align: center;
 }
