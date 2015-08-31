@@ -3,7 +3,7 @@
 
     if($_POST){
         // получаем название файла
-        $name = preg_replace("/[^a-zA-Z0-9\s]/", "", $_POST["file_name"]);
+        $name = preg_replace("/[^a-zA-ZА-Яа-я0-9\s.]/", "", $_POST["file_name"]);
         // получаем содержимое файла
         $content = $_POST["file_content"];
         //проверяем название
