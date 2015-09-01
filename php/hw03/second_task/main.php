@@ -1,13 +1,15 @@
 <?php
-    require_once "connection.php";
-    require_once "data.php";
+require_once "data.php";
+require_once "connection.php";
 
-    $query = "SHOW TABLES";
-    $result = $mysql->query($query);
-    $tables = $result->fetch_all();
-echo $tables;
+    //получаем список таблиц из БД
+    $tables = get_tables($mysql);
 
-
+    if($_POST){
+        $name = $_POST['tables'];
+        $format = $_POST['formats'];
+        get_data($name, $format, $mysql);
+    }
 ?>
 
 <html lang="ru">
@@ -19,16 +21,16 @@ echo $tables;
 <body>
     <div class="wrapper">
         <div class="container">
-            <form action="data.php" method="post">
-                <select class="tables">
+            <form action="main.php" method="post">
+                <select class="tables" id="tables" name="tables">
                     <?php
-                    echo "<option>Выберите таблицу</option>";
+                    echo "<option selected='selected'>Выберите таблицу</option>";
                         foreach($tables as $table){
-                            echo "<option>".$table."</option>";                        }
+                            echo "<option>".$table[0]."</option>";                        }
                     ?>
                 </select>
-                <select class="formats">
-                    <option>Выберите формат</option>
+                <select class="formats" id="formats" name="formats">
+                    <option selected="selected">Выберите формат</option>
                     <option>CSV</option>
                     <option>JSON</option>
                     <option>XML</option>

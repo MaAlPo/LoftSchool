@@ -20,7 +20,8 @@
             echo "<h3>У вас есть следующие файлы:</h3>";
             echo "<div class='list''>";
             foreach ($files as $file) {
-                echo "<a class='success' href='read.php?file=$file'>$file</a>
+                $show_file = mb_convert_encoding($file, "ASCII");
+                echo "<a class='success' href='read.php?file=$file'>$show_file</a>
                           <span><a href='edit.php?file=$file'>Редактировать</a></span>
                           <span><a href='delete.php?file=$file'>Удалить</a></span><br/>";
             }

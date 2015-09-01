@@ -1,6 +1,6 @@
 <?php
 
-$mysql = new mysqli('localhost', 'root', '', 'loftschool');
+$mysql = new mysqli("localhost", "root", "", "loft");
 
 if(mysqli_connect_errno()){
     die(mysqli_connect_error());

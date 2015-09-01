@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require_once "connection.php";
 
 $sql_products =  "SELECT `Категории товаров`.Title AS Category, `Товары`.Title, `Товары`.Mark, `Товары`.Price, `Товары`.Count
                   FROM `Товары`

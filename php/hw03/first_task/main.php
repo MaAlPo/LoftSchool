@@ -6,6 +6,7 @@ define("DIR", "files/");
 function write($name, $content){
     //добавляем файлу расширение
     $file_name = $name . ".txt";
+    $file_name = mb_convert_encoding($file_name, "utf-8");
     //открываем файл для записи
     if (!$file_open = fopen(DIR.$file_name, "w")){
         die("<h2 class='warning'>Не удалось создать файл</h2>
