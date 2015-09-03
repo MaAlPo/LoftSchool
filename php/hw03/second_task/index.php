@@ -18,7 +18,8 @@ require_once "main.php";
                     create_json($name, $conn);
                     break;
                 case "XML":
-                    create_xml($name, $conn);
+                    //create_xml($name, $conn);
+
                     break;
                 default:
                     echo "<h3>Выберите формат файла!</h3>";
@@ -27,8 +28,10 @@ require_once "main.php";
             //проверяем существование файла
             if(file_exists("files/".$m_format."/".$name.".".$m_format)){
                 download_file($name, $m_format);
+
             }else{
                 echo "<h3>Файла не существует!</h3>";
+                exit();
             }
         }else{
             echo "<h3>Выберите таблицу из списка!</h3>";

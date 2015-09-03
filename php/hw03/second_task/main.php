@@ -107,4 +107,5 @@ function download_file($name, $format){
     $content_disposition = "Content-Disposition: attachment; filename=files/".$format."/".$name.".".$format;
     header($content_type);
     header($content_disposition);
+    readfile("files/".$format."/".$name.".".$format);
 }
