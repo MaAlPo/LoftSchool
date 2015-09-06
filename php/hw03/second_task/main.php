@@ -1,4 +1,5 @@
 <?php
+
 require_once "connection.php";
 header("Content-Type: text, charset: UTF-8");
 

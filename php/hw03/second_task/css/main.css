@@ -1,0 +1,79 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-size: 100.01%;
+}
+body{
+    font: 14px/1.41 Verdana, Arial, sans-serif;/**/
+    width: 100%;
+    height: 100%;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+tr{
+    height: 30px;
+}
+.wrapper{
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%; 
+    min-width: 1005px; /* +40 for container */
+    overflow: hidden;
+    background-color: #eee;
+}
+.container{
+    width: 965px; /* or 1100*/
+    margin: 0 auto;
+    text-align: center;
+}
+.success{
+    color: darkgreen;
+}
+.info{
+    color: darkblue;
+}
+.warning{
+    color: darkred;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-underline: none;
+    margin: 10px;
+}
+button {
+    margin: 10px;
+    width: auto;
+    min-width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background: cadetblue;
+    color: azure;
+}
+select{
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.name{
+    font-size: 1.3em;
+}
+.action{
+    font-size: .7em;
+}
+
+.empty{
+    position: relative;
+    height: 110px;
+}
+footer{
+    position: relative;
+    margin-top: -110px;
+    height: 110px;
+    width: 100%;
+}
