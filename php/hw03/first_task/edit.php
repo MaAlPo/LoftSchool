@@ -17,8 +17,7 @@
         $new_content = $_POST["new_content"];
         //проверяем название
         if(!$new_name) {
-            die("<h2 class='warning'>Введите название файла</h2>
-                <a href='catalog.php'>Вернуться на главную</a></h3>");
+            echo "<h3 class='warning'>Введите корректное название файла!</h3>";
         }else{
             rename(DIR.$old_name, DIR.$new_name.".txt");
 
@@ -29,22 +28,38 @@
     }
 ?>
 
-<html lang="ru" >
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Редактирование файла</title>
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=1025"> <!--wrapper + 20 -->
+    <!--<meta name="viewport" content="device-width"> responsive -->
+    <title>Catalog</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
 </head>
 <body>
 <div class="wrapper">
-    <h3><a href="catalog.php">Вернуться на главную</a></h3>
-    <h3><?php echo $name; ?></h3>
-    <form action="edit.php" method="post">
-        <input type="text" id="new_name" name="new_name" value="<?php echo $short_name; ?>"><br/>
-        <textarea id="new_content" name="new_content" ><?php echo $content; ?></textarea><br/>
-        <a href="edit.php"><button type="submit">Изменить файл</button></a>
-        <br/><input style="visibility:hidden" id="old_name" name="old_name" value="<?php echo $name ?>">
-    </form>
-</div>
+    <div class="container">
+        <a href="catalog.php"><button>Вернуться на главную</button></a>
 
+        <h3><?php echo $name; ?></h3>
+
+            <form action="edit.php" method="post">
+                <input type="text" id="new_name" name="new_name" value="<?php echo $short_name; ?>"><br/>
+                <textarea id="new_content" name="new_content" ><?php echo $content; ?></textarea><br/>
+                <a href="edit.php"><button type="submit">Изменить файл</button></a>
+                <br/><input style="visibility:hidden" id="old_name" name="old_name" value="<?php echo $name; ?>">
+            </form>
+
+    </div> <!--container-->
+</div>   <!-- wrapper  -->
+<div class="empty"></div>
+<footer></footer>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
+</html>

@@ -4,31 +4,49 @@
     $files = array_diff(scandir(DIR), array(".", ".."));
 ?>
 
-<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Каталог</title>
-    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1025"> <!--wrapper + 20 -->
+    <!--<meta name="viewport" content="device-width"> responsive -->
+    <title>Catalog</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
 </head>
 <body>
-<div class="wrapper">
-    <h3><a href="create.php">Создать новый файл</a></h3>
+    <div class="wrapper">
+        <div class="container">
+            <a href="create.php"><button>Создать новый файл</button></a>
 
-    <?php
-        if($files) {
-            echo "<h3>У вас есть следующие файлы:</h3>";
-            echo "<div class='list''>";
-            foreach ($files as $file) {
-                $show_file = mb_convert_encoding($file, "ASCII");
-                echo "<a class='success' href='read.php?file=$file'>$show_file</a>
-                          <span><a href='edit.php?file=$file'>Редактировать</a></span>
-                          <span><a href='delete.php?file=$file'>Удалить</a></span><br/>";
-            }
-            echo "</div>";
-        }else{
-            echo "<h3>Файлов не обнаружено</h3>";
-        }
-    ?>
-</div>
+            <?php
+                if($files) {
+                    echo "<h3>У вас есть следующие файлы:</h3>";
+
+                    echo "<div class='list'>";
+                    echo "<table><thead><tr><th>Название</th><th>Действие</th></tr></thead>";
+                    echo "<tbody>";
+                    foreach ($files as $file) {
+                         echo "<tr><td><a class='name' href='read.php?file=$file'>$file</a></td>
+                                <td><a class='action' href='edit.php?file=$file'>Редактировать</a>
+                                <a class='action' href='delete.php?file=$file'>Удалить</a></td></tr>";
+                    }
+                    echo "</tbody>";
+                    echo "</table>";
+                    echo "</div>";
+                }else{
+                    echo "<h3>Файлов не обнаружено</h3>";
+                }
+            ?>
+
+        </div> <!--container-->
+    </div>   <!-- wrapper  -->
+    <div class="empty"></div>
+    <footer></footer>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
+</html>

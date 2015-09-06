@@ -27,8 +27,9 @@ function write($name, $content){
 //удаляем файл
 function delete($name){
     if(!unlink(DIR.$name)){
-        die("<h2 class='warning'>Не удалось удалить файл</h2>
-        <h3><a href='catalog.php'>Вернуться на главную</a></h3>");
+        echo "<h3 class='warning'>Не удалось удалить файл</h3>";
+        echo "<a href='catalog.php'><button>Вернуться на главную</button></a>";
+        die();
     }
     else {
         header("HTTP/1.1 301 Moved Permanently");
@@ -41,20 +42,24 @@ function read($name){
     //переменная для контента
     $content = "";
     //открываем файл для чтения
-    if (!$file_open = fopen(DIR.$name, "r")){
-        die("<h2 class='warning'>Не удалось открыть файл</h2>
-        <h3><a href='catalog.php'>Вернуться на главную</a></h3>");
-    }
-    //проверяем содержимое файла
-    if(!file_get_contents(DIR.$name)) {
-        echo "<p class='empty'>Данный файл пуст!</p>";
-    }else {
+    if(!$file_open = fopen(DIR.$name, "r")){
+        echo "<h3 class='warning'>Не удалось открыть файл</h3>";
+        echo "<a href='catalog.php'><button>Вернуться на главную</button></a>";
+        die();
+    }else{
         //получаем содержимое файла в переменную content и возвращаем ее
-        while (!feof($file_open)) {
-            $buffer = fgets($file_open);
-            $content .= $buffer . "<br/>";
+
+        if(!fgetss($file_open)){
+            return false;
         }
+        else{
+            while (!feof($file_open)) {
+                $buffer = fgetss($file_open);
+                $content .= $buffer . "<br/>";
+            }
+        }
+        fclose($file_open);
+
+        return $content;
     }
-    fclose($file_open);
-    return $content;
 }
