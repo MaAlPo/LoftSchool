@@ -1,5 +1,9 @@
 <?php
 
+ini_set("display_errors", "off");
+ini_set("log_errors", "on");
+ini_set("error_log", __DIR__."/errors.log");
+
 define("DIR", "files/");
 
 //запись файла
@@ -9,15 +13,15 @@ function write($name, $content){
     $file_name = mb_convert_encoding($file_name, "utf-8");
     //открываем файл для записи
     if (!$file_open = fopen(DIR.$file_name, "w")){
-        die("<h2 class='warning'>Не удалось создать файл</h2>
-        <h3><a href='catalog.php'>Вернуться на главную</a></h3>");
+        echo "<h2 class='warning'>Не удалось создать файл</h2>";
+        exit;
     }
     //записываем контент в файл
     if($content){
         $content = strip_tags($content);
         if(!fwrite($file_open, $content)){
-            die("<h2 class='warning'>Не удалось сделать запись в файл</h2>
-            <h3><a href='catalog.php'>Вернуться на главную</a></h3>");
+            echo "<h2 class='warning'>Не удалось сделать запись в файл</h2>";
+            exit;
         }
     }
     //закрываем файл
@@ -28,8 +32,7 @@ function write($name, $content){
 function delete($name){
     if(!unlink(DIR.$name)){
         echo "<h3 class='warning'>Не удалось удалить файл</h3>";
-        echo "<a href='catalog.php'><button>Вернуться на главную</button></a>";
-        die();
+        exit;
     }
     else {
         header("HTTP/1.1 301 Moved Permanently");
@@ -44,8 +47,7 @@ function read($name){
     //открываем файл для чтения
     if(!$file_open = fopen(DIR.$name, "r")){
         echo "<h3 class='warning'>Не удалось открыть файл</h3>";
-        echo "<a href='catalog.php'><button>Вернуться на главную</button></a>";
-        die();
+        exit;
     }else{
         //получаем содержимое файла в переменную content и возвращаем ее
 

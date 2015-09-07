@@ -1,0 +1,5 @@
+[07-Sep-2015 15:05:29 Europe/Moscow] PHP Warning:  fopen(files/543.txt): failed to open stream: No such file or directory in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php on line 49
+[07-Sep-2015 15:05:29 Europe/Moscow] PHP Stack trace:
+[07-Sep-2015 15:05:29 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:0
+[07-Sep-2015 15:05:29 Europe/Moscow] PHP   2. read() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:26
+[07-Sep-2015 15:05:29 Europe/Moscow] PHP   3. fopen() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php:49
