@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-09-04 12:42:42
+Date: 2015-09-07 12:43:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,7 @@ CREATE TABLE `Company` (
   `Id_company` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Title` varchar(64) NOT NULL,
   PRIMARY KEY (`Id_company`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of Company
@@ -89,8 +89,8 @@ CREATE TABLE `Content` (
   `Price` decimal(10,0) unsigned NOT NULL,
   KEY `Id_order` (`Id_order`) USING BTREE,
   KEY `Id_product` (`Id_product`),
-  CONSTRAINT `content_ibfk_2` FOREIGN KEY (`Id_product`) REFERENCES `items` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `content_ibfk_1` FOREIGN KEY (`Id_order`) REFERENCES `orders` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `content_ibfk_1` FOREIGN KEY (`Id_order`) REFERENCES `Заказы` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `content_ibfk_2` FOREIGN KEY (`Id_product`) REFERENCES `Товары` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -162,8 +162,8 @@ CREATE TABLE `Items` (
   UNIQUE KEY `Id` (`Id`),
   KEY `Id_catalog` (`Id_catalog`),
   KEY `Id_company` (`Id_company`),
-  CONSTRAINT `товары_to_компании` FOREIGN KEY (`Id_company`) REFERENCES `company` (`Id_company`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `items_ibfk_1` FOREIGN KEY (`Id_catalog`) REFERENCES `category` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `items_ibfk_1` FOREIGN KEY (`Id_catalog`) REFERENCES `Категории товаров` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `товары_to_компании` FOREIGN KEY (`Id_company`) REFERENCES `Компании` (`Id_company`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -279,7 +279,7 @@ CREATE TABLE `Security` (
   `Password` varchar(32) NOT NULL,
   PRIMARY KEY (`Id_user`),
   UNIQUE KEY `Id_user` (`Id_user`),
-  CONSTRAINT `security_ibfk_1` FOREIGN KEY (`Id_user`) REFERENCES `users` (`Id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `security_ibfk_1` FOREIGN KEY (`Id_user`) REFERENCES `Пользователи` (`Id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
