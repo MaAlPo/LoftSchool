@@ -1,7 +1,6 @@
 <?php
 
 require_once "connection.php";
-header("Content-Type: text, charset: UTF-8");
 
 //получаем массив с названиями таблиц из БД
 function get_tables($conn){
@@ -27,14 +26,14 @@ function get_fields($table, $conn){
     return $data;
 }
 
-//получаем данные из БД
-function get_data($table, $conn){
+//получаем данные из БД для json
+function get_data_json($table, $conn){
     $query = "SELECT * FROM $table";
     $result = $conn->query($query)->fetch_all(MYSQL_ASSOC);
     return $result;
 }
-//получаем данные из БД для xml
-function get_data_xml($table, $conn){
+//получаем данные из БД для csv и xml
+function get_data($table, $conn){
     $query = "SELECT * FROM $table";
     $result = $conn->query($query)->fetch_all(MYSQL_NUM);
     return $result;
@@ -55,7 +54,7 @@ function create_csv($table, $conn){
 
 //создание файла JSON
 function create_json($table, $conn){
-    $data_from_table = get_data($table, $conn);
+    $data_from_table = get_data_json($table, $conn);
     $json = fopen("files/json/".$table.".json", "w");
     fwrite($json, json_encode($data_from_table));
 
@@ -69,7 +68,7 @@ function create_xml($table, $conn){
     $fields = get_fields($table, $conn);
 
     //получаем данные
-    $data_from_table = get_data_xml($table, $conn);
+    $data_from_table = get_data($table, $conn);
 
     //создаем объект документа
     $dom = new DOMDocument('1.0', 'UTF-8');
@@ -87,7 +86,6 @@ function create_xml($table, $conn){
         $entity = $dom->createElement("entity");
         $attribute_id = $dom->createAttribute('id');
         $attribute_id->value = $value[0];
-
         $entity->appendChild($attribute_id);
 
         for($k = 0, $i = count($fields); $k < $i; $k++ ){

@@ -4,40 +4,6 @@ require_once "main.php";
     //получаем список таблиц из БД для выпадающего меню
     $tables = get_tables($conn);
 
-
-    if($_POST){
-        $name = $_POST['tables'];
-        $format = $_POST['formats'];
-        $m_format = strtolower($format);
-        if(in_array($name, $tables)){
-            switch ($format){
-                case "CSV":
-                    create_csv($name, $conn);
-                    break;
-                case "JSON":
-                    create_json($name, $conn);
-                    break;
-                case "XML":
-                    //create_xml($name, $conn);
-
-                    break;
-                default:
-                    echo "<h3>Выберите формат файла!</h3>";
-                    break;
-            }
-            //проверяем существование файла
-            if(file_exists("files/".$m_format."/".$name.".".$m_format)){
-                download_file($name, $m_format);
-
-            }else{
-                echo "<h3>Файла не существует!</h3>";
-                exit();
-            }
-        }else{
-            echo "<h3>Выберите таблицу из списка!</h3>";
-        }
-
-    }
 ?>
 
 <html lang="ru">
@@ -55,13 +21,48 @@ require_once "main.php";
     <div class="wrapper">
         <div class="container">
 
+            <?php
+            if($_POST){
+                $name = $_POST['tables'];
+                $format = $_POST['formats'];
+                $m_format = strtolower($format);
+                if(in_array($name, $tables)){
+                    switch ($format){
+                        case "CSV":
+                            create_csv($name, $conn);
+                            break;
+                        case "JSON":
+                            create_json($name, $conn);
+                            break;
+                        case "XML":
+                            create_xml($name, $conn);
+
+                            break;
+                        default:
+                            echo "<h3>Выберите формат файла!</h3>";
+                            break;
+                    }
+                    //проверяем существование файла
+                    if(file_exists("files/".$m_format."/".$name.".".$m_format)){
+                        download_file($name, $m_format);
+                    }else{
+                        echo "<h3>Файла не существует!</h3>";
+                        exit();
+                    }
+                }else{
+                    echo "<h3>Выберите таблицу из списка!</h3>";
+                }
+            }
+            ?>
+
             <form action="index.php" method="post">
                 <select class="tables" id="tables" name="tables">
 
                     <?php
                     echo "<option selected='selected'>Выберите таблицу</option>";
                         foreach($tables as $table){
-                            echo "<option>".$table."</option>";                        }
+                            echo "<option>".$table."</option>";
+                        }
                     ?>
 
                 </select>
