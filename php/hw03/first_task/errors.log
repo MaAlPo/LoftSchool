@@ -3,3 +3,7 @@
 [07-Sep-2015 15:05:29 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:0
 [07-Sep-2015 15:05:29 Europe/Moscow] PHP   2. read() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:26
 [07-Sep-2015 15:05:29 Europe/Moscow] PHP   3. fopen() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php:49
+[08-Sep-2015 14:04:38 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\create.php on line 24
+[08-Sep-2015 14:04:38 Europe/Moscow] PHP Stack trace:
+[08-Sep-2015 14:04:38 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\create.php:0
+[08-Sep-2015 14:04:38 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\create.php:24

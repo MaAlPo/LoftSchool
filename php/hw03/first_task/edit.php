@@ -12,7 +12,7 @@
     if($_POST){
         // получаем названия файла
         $old_name = $_POST["old_name"];
-        $new_name = preg_replace("/[^a-zA-Z0-9\s]/", "", $_POST["new_name"]);
+        $new_name = preg_replace("/[^0-9A-Za-zА-Яа-я\s.]/", "", $_POST["new_name"]);
         // получаем содержимое файла
         $new_content = $_POST["new_content"];
         //проверяем название

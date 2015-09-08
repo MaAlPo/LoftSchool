@@ -4,7 +4,7 @@
 
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=1025"> <!--wrapper + 20 -->
     <!--<meta name="viewport" content="device-width"> responsive -->
     <title>Catalog</title>
@@ -21,7 +21,7 @@
             <?php
             if($_POST){
                 // получаем название файла
-                $name = preg_replace("/[^a-zA-Z0-9\s.]/", "", $_POST["file_name"]);
+                $name = preg_replace("/[^0-9A-Za-zА-Яа-я\s.]/", "", $_POST["file_name"]);
                 echo $name;
                 // получаем содержимое файла
                 $content = $_POST["file_content"];
@@ -30,7 +30,7 @@
                     echo "<h3 class='warning'>Введите корректное название файла!</h3>";
                 }else{
                     //создаем и записываем в файл
-                    write($name, $content);
+//                    write($name, $content);
                     echo "<h3 class='success'>Файл успешно создан!</h3>";
                 }
             }
