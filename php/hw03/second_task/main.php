@@ -1,6 +1,7 @@
 <?php
 
 require_once "connection.php";
+define("DIR", 'files/');
 
 //получаем массив с названиями таблиц из БД
 function get_tables($conn){
@@ -10,7 +11,7 @@ function get_tables($conn){
 
     foreach($result as $table){
         $tables[] = $table[0];
-        }
+    }
     return $tables;
 }
 
@@ -42,7 +43,7 @@ function get_data($table, $conn){
 //создание файла CSV
 function create_csv($table, $conn){
     $data_from_table = get_data($table, $conn);
-    $csv = fopen("files/csv/".$table.".csv", "w");
+    $csv = fopen("files/csv/".$table.".csv", "w+");
     $fields = get_fields($table, $conn);
     fputcsv($csv, $fields, ";");
 
@@ -55,7 +56,7 @@ function create_csv($table, $conn){
 //создание файла JSON
 function create_json($table, $conn){
     $data_from_table = get_data_json($table, $conn);
-    $json = fopen("files/json/".$table.".json", "w");
+    $json = fopen("files/json/".$table.".json", "w+");
     fwrite($json, json_encode($data_from_table));
 
     fclose($json);
@@ -101,10 +102,11 @@ function create_xml($table, $conn){
 }
 
 //скачиваем файл
-function download_file($name, $format){
-    $content_type = "Content-Type: application/".$format;
-    $content_disposition = "Content-Disposition: attachment; filename=files/".$format."/".$name.".".$format;
-    header($content_type);
-    header($content_disposition);
-    readfile("files/".$format."/".$name.".".$format);
+function download_file($name){
+    header("Content-Disposition: attachment; filename=\'".$name."\'");
+    header("Content-Type: application/x-force-download; name=\'".$name."\'");
+//    header("Content-Length: ".filesize($file));
+    readfile($name);
+    header("Connection: close");
+
 }

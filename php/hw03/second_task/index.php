@@ -36,18 +36,15 @@ require_once "main.php";
                             break;
                         case "XML":
                             create_xml($name, $conn);
-
                             break;
                         default:
                             echo "<h3>Выберите формат файла!</h3>";
                             break;
                     }
                     //проверяем существование файла
-                    if(file_exists("files/".$m_format."/".$name.".".$m_format)){
-                        download_file($name, $m_format);
-                    }else{
-                        echo "<h3>Файла не существует!</h3>";
-                        exit();
+                    $file = DIR.$m_format."/".$name.".".$m_format;
+                    if(file_exists($file)){
+                        download_file($file);
                     }
                 }else{
                     echo "<h3>Выберите таблицу из списка!</h3>";
@@ -57,7 +54,6 @@ require_once "main.php";
 
             <form action="index.php" method="post">
                 <select class="tables" id="tables" name="tables">
-
                     <?php
                     echo "<option selected='selected'>Выберите таблицу</option>";
                         foreach($tables as $table){
