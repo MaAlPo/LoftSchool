@@ -21,8 +21,7 @@
             <?php
             if($_POST){
                 // получаем название файла
-                $name = preg_replace("/[^0-9A-Za-zА-Яа-я\s.]/", "", $_POST["file_name"]);
-                echo $name;
+                $name = preg_replace("/[^0-9A-Za-z\s.]/", "", $_POST["file_name"]);
                 // получаем содержимое файла
                 $content = $_POST["file_content"];
                 //проверяем название
@@ -30,7 +29,7 @@
                     echo "<h3 class='warning'>Введите корректное название файла!</h3>";
                 }else{
                     //создаем и записываем в файл
-//                    write($name, $content);
+                    write($name, $content);
                     echo "<h3 class='success'>Файл успешно создан!</h3>";
                 }
             }

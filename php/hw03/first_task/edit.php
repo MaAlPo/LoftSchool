@@ -12,7 +12,7 @@
     if($_POST){
         // получаем названия файла
         $old_name = $_POST["old_name"];
-        $new_name = preg_replace("/[^0-9A-Za-zА-Яа-я\s.]/", "", $_POST["new_name"]);
+        $new_name = preg_replace("/[^0-9A-Za-z\s.]/", "", $_POST["new_name"]);
         // получаем содержимое файла
         $new_content = $_POST["new_content"];
         //проверяем название
@@ -20,11 +20,10 @@
             echo "<h3 class='warning'>Введите корректное название файла!</h3>";
         }else{
             rename(DIR.$old_name, DIR.$new_name.".txt");
-
             write($new_name, $new_content);
-            header("HTTP/1.1 301 Moved Permanently");
-            header("Location: catalog.php");
         }
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: index.php");
     }
 ?>
 
@@ -44,7 +43,7 @@
     <div class="container">
         <a href="catalog.php"><button>Вернуться на главную</button></a>
 
-        <h3><?php echo $name; ?></h3>
+        <h3><?php echo $short_name; ?></h3>
 
             <form action="edit.php" method="post">
                 <input type="text" id="new_name" name="new_name" value="<?php echo $short_name; ?>"><br/>

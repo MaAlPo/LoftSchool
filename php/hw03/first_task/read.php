@@ -2,6 +2,8 @@
     require_once "main.php";
     //получаем имя читаемого файла
     $name = $_GET["file"];
+    //получаем содержимое читаемого файла
+    $content = nl2br(read($name));
 ?>
 
 <html lang="ru">
@@ -26,7 +28,7 @@
                 if(!read($name)){
                     echo "<h3 class='info'>Файл пуст!</h3>";
                 }else{
-                    echo "<p class='text'>".read($name)."</p>";
+                    echo "<p class='text'>".$content."</p>";
                 }
                 ?>
 
