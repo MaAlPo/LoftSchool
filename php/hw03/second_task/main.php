@@ -103,10 +103,8 @@ function create_xml($table, $conn){
 
 //скачиваем файл
 function download_file($name){
-    header("Content-Disposition: attachment; filename=\'".$name."\'");
-    header("Content-Type: application/x-force-download; name=\'".$name."\'");
-//    header("Content-Length: ".filesize($file));
+    header("Content-Disposition: attachment; filename=".$name."");
+    header("Content-Type: application/x-force-download; name=".$name."");
+    header("Content-Length: ".filesize($name));
     readfile($name);
-    header("Connection: close");
-
 }
