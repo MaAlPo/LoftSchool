@@ -21,7 +21,7 @@
             <?php
             if($_POST){
                 // получаем название файла
-                $name = preg_replace("/[^0-9A-Za-z\s.]/", "", $_POST["file_name"]);
+                $name = strip_tags($_POST["file_name"]);
                 // получаем содержимое файла
                 $content = $_POST["file_content"];
                 //проверяем название
