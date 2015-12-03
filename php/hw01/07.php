@@ -4,7 +4,13 @@
  * и  возвращающая TRUE   если  строка
  * является палиндромом, FALSE  в противном случае.
  */
-$my_str = "qwrweq";
+$my_str = "qwrwq";
+
+if(func($my_str)){
+    echo "TRUE";
+}else{
+    echo "FALSE";
+}
 
 function func($my_str){
     $new_str = strtolower($my_str);
@@ -14,4 +20,3 @@ function func($my_str){
     }
     return true;
 };
-func($my_str);

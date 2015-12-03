@@ -4,7 +4,9 @@
  * массив чисел вида: 1, 22, 5, 66, 3, 57
  * и возвращает массив по возрастанию: 1, 3, 5, 22, 57, 66
  */
-$my_arr = array(1, 22, 5, 66, 3, 57);
+$my_arr = array(1, 22, 5, 66, 3, 57, 12, 44, 65, 2, 65, 13);
+
+my_func($my_arr);
 
 function my_func($my_arr){
     $new_array = $my_arr;
@@ -22,4 +24,3 @@ function my_func($my_arr){
         echo $my_val.", ";
     }
 };
-my_func($my_arr);

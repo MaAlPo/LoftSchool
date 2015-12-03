@@ -9,8 +9,11 @@
  * параметров,  переданных  функции.
  */
 //табличка умножения
-$a = 3;
-$b = 3;
+$a = 9;
+$b = 9;
+
+tabl($a, $b);
+
 function tabl($a, $b){
 	if (gettype($a) != "integer" || gettype($b) != "integer"){
         echo "Ошибка! Необходимы целые числа!";
@@ -26,4 +29,3 @@ function tabl($a, $b){
         echo "</tbody></table>";
     }
 };
-tabl($a, $b);

@@ -9,10 +9,11 @@
 $i = 10;
 $j = 35;
 
+recur($i, $j);
+
 function recur($i, $j){
     if($i > $j) return;
     if($i%2) echo $i.", ";
     $i++;
     recur($i, $j);
 };
-recur($i, $j);
