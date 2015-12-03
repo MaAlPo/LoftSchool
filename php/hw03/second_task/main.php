@@ -57,8 +57,9 @@ function create_csv($table, $conn){
 function create_json($table, $conn){
     $data_from_table = get_data_json($table, $conn);
     $json = fopen("files/json/".$table.".json", "w+");
-    fwrite($json, json_encode($data_from_table));
+    $data = json_encode($data_from_table, JSON_UNESCAPED_UNICODE);
 
+    fwrite($json, $data);
     fclose($json);
 }
 

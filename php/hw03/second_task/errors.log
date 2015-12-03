@@ -1,35 +1,40 @@
-[14-Sep-2015 10:12:26 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:12:26 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:12:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:12:26 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:12:26 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:13:05 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:13:05 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:13:05 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:13:05 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:13:05 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:13:32 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:13:32 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:13:32 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:13:32 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:13:32 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:13:43 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:13:43 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:13:43 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:13:43 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:13:43 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:14:08 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:14:08 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:14:08 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:14:08 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:14:08 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:14:31 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:14:31 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:14:31 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:14:31 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:14:31 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
-[14-Sep-2015 10:14:51 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
-[14-Sep-2015 10:14:51 Europe/Moscow] PHP Stack trace:
-[14-Sep-2015 10:14:51 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
-[14-Sep-2015 10:14:51 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
-[14-Sep-2015 10:14:51 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
+[03-Dec-2015 15:48:37 Europe/Moscow] PHP Warning:  fwrite() expects parameter 2 to be string, array given in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 62
+[03-Dec-2015 15:48:37 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:48:37 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:48:37 Europe/Moscow] PHP   2. create_json() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:17
+[03-Dec-2015 15:48:37 Europe/Moscow] PHP   3. fwrite() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 109
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 111
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:51:04 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:111
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 109
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:109
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 110
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:110
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:62) in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 111
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   2. download_file() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:29
+[03-Dec-2015 15:56:09 Europe/Moscow] PHP   3. header() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:111
+[03-Dec-2015 15:58:24 Europe/Moscow] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php on line 60
+[03-Dec-2015 15:58:24 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 15:58:24 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:0
+[03-Dec-2015 15:58:24 Europe/Moscow] PHP   2. create_json() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\index.php:17
+[03-Dec-2015 15:58:24 Europe/Moscow] PHP   3. json_decode() C:\OpenServer\domains\LoftSchool\php\hw03\second_task\main.php:60
