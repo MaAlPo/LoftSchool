@@ -28,7 +28,9 @@
                     echo "<table><thead><tr><th>Название</th><th>Действие</th></tr></thead>";
                     echo "<tbody>";
                     foreach ($files as $file) {
-                         echo "<tr><td><a class='name' href='read.php?file=$file'>$file</a></td>
+                        $short_name = pathinfo($file, PATHINFO_FILENAME);
+                        $short_name = iconv("cp1251", "utf-8", $short_name);
+                        echo "<tr><td><a class='name' href='read.php?file=$file'>$short_name</a></td>
                                 <td><a class='action' href='edit.php?file=$file'>Редактировать</a>
                                 <a class='action' href='delete.php?file=$file'>Удалить</a></td></tr>";
                     }

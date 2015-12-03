@@ -12,7 +12,10 @@
     if($_POST){
         // получаем названия файла
         $old_name = $_POST["old_name"];
-        $new_name = strip_tags($_POST["new_name"]);
+
+        $new_name = filter_var($_POST["new_name"], FILTER_SANITIZE_STRING);
+        $new_name = mb_convert_encoding($new_name, "windows-1251");
+
         // получаем содержимое файла
         $new_content = $_POST["new_content"];
         //проверяем название

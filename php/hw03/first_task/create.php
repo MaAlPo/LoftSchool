@@ -21,7 +21,9 @@
             <?php
             if($_POST){
                 // получаем название файла
-                $name = strip_tags($_POST["file_name"]);
+                $name = filter_var($_POST["file_name"], FILTER_SANITIZE_STRING);
+                $name = mb_convert_encoding($name, "windows-1251");
+
                 // получаем содержимое файла
                 $content = $_POST["file_content"];
                 //проверяем название

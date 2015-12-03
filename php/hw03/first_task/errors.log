@@ -7,3 +7,354 @@
 [08-Sep-2015 14:04:38 Europe/Moscow] PHP Stack trace:
 [08-Sep-2015 14:04:38 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\create.php:0
 [08-Sep-2015 14:04:38 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\create.php:24
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 16
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:16
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 26
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:26
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 27
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:31 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:27
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 16
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:16
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 26
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:26
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 27
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:22:47 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:27
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 16
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:16
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 26
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:26
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 27
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:23:02 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:27
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 17
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:17
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 27
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:27
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 28
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:13 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:28
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 17
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:17
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 27
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:27
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 28
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:25:33 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:28
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 18
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:18
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 28
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:28
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 29
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:27:41 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:29
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 18
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:18
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 28
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:28
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:15) in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php on line 29
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:0
+[03-Dec-2015 13:28:08 Europe/Moscow] PHP   2. header() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\edit.php:29
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:21 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:41:42 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:28 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Warning:  iconv_get_encoding() expects at most 1 parameter, 2 given in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 33
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:45:39 Europe/Moscow] PHP   2. iconv_get_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:33
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 32
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:48:55 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:32
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win-1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:13 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;Win1251&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:52:26 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:52:43 Europe/Moscow] PHP Warning:  fopen(files/������.txt): failed to open stream: No such file or directory in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php on line 45
+[03-Dec-2015 14:52:43 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:52:43 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:0
+[03-Dec-2015 14:52:43 Europe/Moscow] PHP   2. read() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:6
+[03-Dec-2015 14:52:43 Europe/Moscow] PHP   3. fopen() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php:45
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:04 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Warning:  mb_convert_encoding(): Unknown encoding &quot;ansi&quot; in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php on line 31
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:0
+[03-Dec-2015 14:53:11 Europe/Moscow] PHP   2. mb_convert_encoding() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\catalog.php:31
+[03-Dec-2015 14:54:01 Europe/Moscow] PHP Warning:  fopen(files/�����.txt): failed to open stream: No such file or directory in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php on line 45
+[03-Dec-2015 14:54:01 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:54:01 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:0
+[03-Dec-2015 14:54:01 Europe/Moscow] PHP   2. read() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\read.php:6
+[03-Dec-2015 14:54:01 Europe/Moscow] PHP   3. fopen() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php:45
+[03-Dec-2015 14:54:11 Europe/Moscow] PHP Warning:  unlink(files/�����.txt): No such file or directory in C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php on line 31
+[03-Dec-2015 14:54:11 Europe/Moscow] PHP Stack trace:
+[03-Dec-2015 14:54:11 Europe/Moscow] PHP   1. {main}() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\delete.php:0
+[03-Dec-2015 14:54:11 Europe/Moscow] PHP   2. delete() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\delete.php:8
+[03-Dec-2015 14:54:11 Europe/Moscow] PHP   3. unlink() C:\OpenServer\domains\LoftSchool\php\hw03\first_task\main.php:31
